@@ -5,15 +5,21 @@ var express = require('express'),
     mysql = require('mysql'),
     bodyParser = require('body-parser'),
     myConnection = require('express-myconnection');
+<<<<<<< HEAD
 var goals = require("./routes/goals")
+=======
+>>>>>>> 5d48f0297d7ebc409445a68cb1a28162da58bba5
 
 var dbOptions = {
     host: 'localhost',
-    user: 'root',
-    password: 'root',
+    user: 'golden_girls',
+    password: 'goals',
     port: 3306,
     database: 'Goal_it'
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5d48f0297d7ebc409445a68cb1a28162da58bba5
 };
 
 app.use(express.static('public'));
@@ -32,6 +38,9 @@ app.use(myConnection(mysql, dbOptions, 'single'));
 app.use(bodyParser.urlencoded({
     extended: false
 }));
+
+var Members = require('./routes/Members'),
+var goals = require('./routes/goals'),
 // parse application/json
 app.use(bodyParser.json());
 
