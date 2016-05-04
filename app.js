@@ -2,17 +2,18 @@ var express = require('express'),
     exphbs = require('express-handlebars'),
     app = express(),
     fs = require('fs'),
-    handlebars = require('handlebars'),
     mysql = require('mysql'),
     bodyParser = require('body-parser'),
-    myConnection = require('express-myconnection'),
+    myConnection = require('express-myconnection');
+var goals = require("./routes/goals")
 
 var dbOptions = {
     host: 'localhost',
     user: 'root',
     password: 'root',
     port: 3306,
-    database: 'goal_it'
+    database: 'Goal_it'
+
 };
 
 app.use(express.static('public'));
@@ -45,28 +46,28 @@ app.get('/', function(req, res) {
     res.render('home');
 });
 
-app.get('/goals', function(req, res) {
-    res.render('goals');
-});
-
-app.get('/notification', function(req, res) {
-    res.render('notification', result);
-
-});
-
-app.get('/goals', goals.show);
-app.get('/goals/add', goals.showAdd);
-app.post('/goals/add', goals.add);
-app.get('/goals/edit/:id', goals.get);
-app.post('/goals/update/:id', goals.update);
-app.get('/goals/delete/:id', goals.delete);
-
-app.get('/notification', notification.show);
-// app.get('/notification/add', notification.showAdd);
-// app.post('/notification/add', notification.add);
-app.get('/notification/edit/:id', notification.get);
-app.post('/notification/update/:id', notification.update);
-// app.get('/notification/delete/:id', notification.delete);
+// app.get('/goals', function(req, res) {
+//     res.render('goals');
+// });
+//
+// app.get('/notification', function(req, res) {
+//     res.render('notification', result);
+//
+// });
+//
+// app.get('/goals', goals.show);
+// app.get('/goals/add', goals.showAdd);
+// app.post('/goals/add', goals.add);
+// app.get('/goals/edit/:id', goals.get);
+// app.post('/goals/update/:id', goals.update);
+// app.get('/goals/delete/:id', goals.delete);
+//
+// app.get('/notification', notification.show);
+// // app.get('/notification/add', notification.showAdd);
+// // app.post('/notification/add', notification.add);
+// app.get('/notification/edit/:id', notification.get);
+// app.post('/notification/update/:id', notification.update);
+// // app.get('/notification/delete/:id', notification.delete);
 
 app.use(errorHandler);
 
