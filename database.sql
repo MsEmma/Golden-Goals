@@ -1,3 +1,5 @@
+use golden_girls;
+
 DROP TABLE IF EXISTS `Members`;
   create table Members(
    	members_id int not null auto_increment,

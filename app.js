@@ -5,14 +5,14 @@ var express = require('express'),
     handlebars = require('handlebars'),
     mysql = require('mysql'),
     bodyParser = require('body-parser'),
-    myConnection = require('express-myconnection'),
+    myConnection = require('express-myconnection');
 
 var dbOptions = {
     host: 'localhost',
-    user: 'root',
-    password: 'root',
+    user: 'golden_girls',
+    password: 'goals',
     port: 3306,
-    database: 'goal_it'
+    database: 'Goal_it'
 };
 
 app.use(express.static('public'));
@@ -31,6 +31,9 @@ app.use(myConnection(mysql, dbOptions, 'single'));
 app.use(bodyParser.urlencoded({
     extended: false
 }));
+
+var Members = require('./routes/Members'),
+var goals = require('./routes/goals'),
 // parse application/json
 app.use(bodyParser.json());
 
