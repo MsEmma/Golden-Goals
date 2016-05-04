@@ -17,11 +17,12 @@ The password is: `goals`
 
 To create the database run the sql below in `mysql` :
 
-`CREATE DATABASE Goal_it;
+```sql
+CREATE DATABASE Goal_it;
 CREATE USER golden_girls@localhost IDENTIFIED BY 'goals';
 GRANT ALL PRIVILEGES ON Goal_it.* TO golden_girls@localhost;
 FLUSH PRIVILEGES;
-`
+```
 
 To create the tables run this in `mysql`:
 
