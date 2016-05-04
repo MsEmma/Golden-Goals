@@ -10,9 +10,9 @@ var express = require('express'),
 var dbOptions = {
     host: 'localhost',
     user: 'root',
-    password: 'nelisa',
+    password: 'root',
     port: 3306,
-    database: 'spaza'
+    database: 'goal_it'
 };
 
 app.use(express.static('public'));
@@ -49,8 +49,8 @@ app.get('/goals', function(req, res) {
     res.render('goals');
 });
 
-app.get('/notify', function(req, res) {
-    res.render('display', result);
+app.get('/notification', function(req, res) {
+    res.render('notification', result);
 
 });
 
@@ -59,16 +59,14 @@ app.get('/goals/add', goals.showAdd);
 app.post('/goals/add', goals.add);
 app.get('/goals/edit/:id', goals.get);
 app.post('/goals/update/:id', goals.update);
-//this should be a post but this is only an illustration of CRUD - not on good practices
 app.get('/goals/delete/:id', goals.delete);
 
-app.get('/categories', db_categories.show);
-app.get('/categories/add', db_categories.showAdd);
-app.post('/categories/add', db_categories.add);
-app.get('/categories/edit/:id', db_categories.get);
-app.post('/categories/update/:id', db_categories.update);
-//this should be a post but this is only an illustration of CRUD - not on good practices
-app.get('/categories/delete/:id', db_categories.delete);
+app.get('/notification', notification.show);
+// app.get('/notification/add', notification.showAdd);
+// app.post('/notification/add', notification.add);
+app.get('/notification/edit/:id', notification.get);
+app.post('/notification/update/:id', notification.update);
+// app.get('/notification/delete/:id', notification.delete);
 
 app.use(errorHandler);
 
