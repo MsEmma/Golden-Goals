@@ -1,9 +1,8 @@
 use Goal_it;
 
-
-DROP TABLE IF EXISTS `Milestones`;
-DROP TABLE IF EXISTS `Goals`;
-DROP TABLE IF EXISTS `Members`;
+DROP TABLE IF EXISTS `milestones`;
+DROP TABLE IF EXISTS `goals`;
+DROP TABLE IF EXISTS `members`;
 
 
 create table members(
@@ -12,7 +11,6 @@ create table members(
 	     primary key(members_id),
 	      constraint uc_user_name unique (user_name)
 );
-
 
 create table goals(
     goals_id int not null auto_increment,
@@ -25,12 +23,13 @@ create table goals(
 	         constraint uc_goal_name unique (goal_name)
 );
 
-
 create table milestones(
 	    id int not null auto_increment,
 	     goals_id int,
 	      milestone VARCHAR(50),
 	       primary key(id),
+         personal_rating VARCHAR(20),
+         timeframe int not null,
 	        foreign key(goals_id) REFERENCES goals(goals_id),
 	         constraint uc_milestone unique (milestone)
 );
