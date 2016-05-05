@@ -1,15 +1,18 @@
-use golden_girls;
+use Goal_it;
 
+DROP TABLE IF EXISTS `milestones`;
+DROP TABLE IF EXISTS `goals`;
 DROP TABLE IF EXISTS `members`;
-  create table members(
+
+
+create table members(
    	members_id int not null auto_increment,
       user_name VARCHAR(50),
 	     primary key(members_id),
 	      constraint uc_user_name unique (user_name)
 );
 
-DROP TABLE IF EXISTS `goals`;
-  create table goals(
+create table goals(
     goals_id int not null auto_increment,
 	   members_id int,
 	    goal_name VARCHAR(50),
@@ -20,8 +23,7 @@ DROP TABLE IF EXISTS `goals`;
 	         constraint uc_goal_name unique (goal_name)
 );
 
-DROP TABLE IF EXISTS 'milestones';
-  create table milestones(
+create table milestones(
 	    id int not null auto_increment,
 	     goals_id int,
 	      milestone VARCHAR(50),
