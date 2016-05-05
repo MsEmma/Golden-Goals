@@ -1,25 +1,51 @@
 exports.add = function(req, res, next) {
     req.getConnection(function(err, connection) {
         if (err) return next(err);
-        var data = {
-            goal: req.body.goal,
-            member_id: Number(req.body.member_id),
-            start_date: req.body.start_date,
-            target_date: req.body.target_date
-        };
 
-        var data1 = {
-          milestone: req.body.milestone,
-          goal_id: Number(req.body.goal_id),
-          timeframe:Number(req.body.timeframe)
-        }
+        var user_name = req.params.user_name;
 
-        connection.query('insert into goals set ?', data, function(err, results) {
+        connection.query('select id from members where user_name = ?', user_name, function(err, results) {
             if (err) return next(err);
-            connection.query('insert into milestones set ?', data1, function(err, results) {
+
+
+            var data = {
+                goal: req.body.goal,
+                start_date: new Date(),
+                target_date: new Date(),
+                member_id: results[0].id
+            };
+
+            connection.query('insert into goals set ?', data, function(err, results) {
                 if (err) return next(err);
-                res.redirect('/');
+
+                var goal_id = results.insertId;
+
+                var data1 = [
+                    [
+                        req.body.milestone1,
+                        goal_id,
+                        Number(req.body.timeframe1)
+                    ],
+                    [
+                        req.body.milestone2,
+                        goal_id,
+                        Number(req.body.timeframe2)
+                    ],
+                    [
+                        req.body.milestone3,
+                        goal_id,
+                        Number(req.body.timeframe3)
+                    ]
+
+                ];
+
+                connection.query('insert into milestones (milestone,goal_id,timeframe) VALUES ?', [data1], function(err, results) {
+
+                    if (err) return next(err);
+                    res.redirect('/');
+                });
             });
         });
+
     });
-};
+}
