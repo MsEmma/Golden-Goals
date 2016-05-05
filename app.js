@@ -6,7 +6,7 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     myConnection = require('express-myconnection'),
     goals = require('./routes/goals');
-    notification = require('./routes/notification'),
+    notifications = require('./routes/notifications'),
     home = require('./routes/home');
 
 var dbOptions = {
@@ -53,16 +53,16 @@ app.get('/goals', function(req, res) {
     res.render('goals');
 });
 
-app.get('/notification', function(req, res) {
-    res.render('notification', result);
+app.get('/notifications', function(req, res) {
+    res.render('notifications', result);
 });
 
 app.get('/', home.show);
 
 app.post('/goals', goals.add);
 
-app.get('/notification', notification.show);
-app.post('/notification/update/:id', notification.update);
+app.get('/notifications/:user_name', notifications.show);
+app.post('/notifications/update/:id', notifications.update);
 
 app.use(errorHandler);
 
