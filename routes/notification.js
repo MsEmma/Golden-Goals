@@ -24,7 +24,7 @@ exports.update = function(req, res, next) {
         if (err) return next(err);
         connection.query('UPDATE milestones SET ? WHERE id = ?', [data, id], function(err, rows) {
             if (err) return next(err);
-            res.redirect('/home');
+            res.redirect('/');
         });
     });
 };

@@ -5,8 +5,9 @@ var express = require('express'),
     mysql = require('mysql'),
     bodyParser = require('body-parser'),
     myConnection = require('express-myconnection'),
-    goals = require("./routes/goals");
-    //members = require('./routes/Members');
+    goals = require('./routes/goals');
+    notification = require('./routes/notification'),
+    home = require('./routes/home');
 
 var dbOptions = {
     host: 'localhost',
@@ -34,7 +35,6 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
-//var goals = require('./routes/goals'),
 // parse application/json
 app.use(bodyParser.json());
 
@@ -52,31 +52,20 @@ app.get('/', function(req, res) {
 app.get('/goals', function(req, res) {
     res.render('goals');
 });
-//
-// app.get('/notification', function(req, res) {
-//     res.render('notification', result);
-//
-// });
-//
-// app.get('/goals', goals.show);
-// app.get('/goals/add', goals.showAdd);
-// app.post('/goals/add', goals.add);
-// app.get('/goals/edit/:id', goals.get);
-// app.post('/goals/update/:id', goals.update);
-// app.get('/goals/delete/:id', goals.delete);
-//
-// app.get('/notification', notification.show);
-// // app.get('/notification/add', notification.showAdd);
-// // app.post('/notification/add', notification.add);
-// app.get('/notification/edit/:id', notification.get);
-// app.post('/notification/update/:id', notification.update);
-// // app.get('/notification/delete/:id', notification.delete);
+
+app.get('/notification', function(req, res) {
+    res.render('notification', result);
+});
+
+app.get('/', home.show);
+
+app.get('/goals/add', goals.showAdd);
+app.post('/goals/add', goals.add);
+
+app.get('/notification', notification.show);
+app.post('/notification/update/:id', notification.update);
 
 app.use(errorHandler);
-
-// app.listen(3000, function() {
-//   console.log('Opening port 3000!');
-// });
 
 app.listen(app.get('port'), function() {
     console.log('Node app is running on port', app.get('port'));
