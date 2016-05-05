@@ -45,12 +45,32 @@ function errorHandler(err, req, res, next) {
     });
 }
 
-app.get('/', function(req, res) {
+app.get('/login/:user_name', function(req, res) {
     res.render('home');
 });
 
 app.get('/goals', function(req, res) {
-    res.render('goals');
+
+  req.getConnection(function(err, connection) {
+      if (err) return next(err);
+      connection.query('SELECT members.id, members.user_name, goals.goal, goals.member_id FROM  members INNER JOIN goals ON goals.member_id = members.id',
+        function(err, results) {
+          if (err) return next(err);
+          res.render('goals', {
+              goals: results
+          });
+      });
+  });
+});
+
+app.get('/goals/:user_name', function(req, res) {
+
+    var notify = req.query.notify;
+
+    res.render('goal_add', {
+      user_name : req.params.user_name,
+      notify : notify
+    });
 });
 
 // app.get('/notifications', function(req, res) {
@@ -59,7 +79,7 @@ app.get('/goals', function(req, res) {
 
 app.get('/', home.show);
 
-app.post('/goals', goals.add);
+app.post('/goals/:user_name', goals.add);
 
 app.get('/notifications', notifications.show);
 // app.post('/notifications/update/:id', notifications.update);
