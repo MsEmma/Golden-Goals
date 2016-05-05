@@ -51,13 +51,17 @@ app.get('/login/:user_name', function(req, res) {
 
 app.get('/goals', function(req, res) {
 
+  var notify = req.query.notify ? true : false;
+
   req.getConnection(function(err, connection) {
       if (err) return next(err);
       connection.query('SELECT members.id, members.user_name, goals.goal, goals.member_id FROM  members INNER JOIN goals ON goals.member_id = members.id',
         function(err, results) {
           if (err) return next(err);
+          console.log(notify);
           res.render('goals', {
-              goals: results
+              goals: results,
+              notify : notify
           });
       });
   });
@@ -65,11 +69,8 @@ app.get('/goals', function(req, res) {
 
 app.get('/goals/:user_name', function(req, res) {
 
-    var notify = req.query.notify;
-
     res.render('goal_add', {
-      user_name : req.params.user_name,
-      notify : notify
+      user_name : req.params.user_name
     });
 });
 
