@@ -53,16 +53,16 @@ app.get('/goals', function(req, res) {
     res.render('goals');
 });
 
-app.get('/notifications', function(req, res) {
-    res.render('notifications', result);
-});
+// app.get('/notifications', function(req, res) {
+//     res.render('notifications', result);
+// });
 
 app.get('/', home.show);
 
 app.post('/goals', goals.add);
 
 app.get('/notifications', notifications.show);
-app.post('/notifications/update/:id', notifications.update);
+// app.post('/notifications/update/:id', notifications.update);
 
 app.use(errorHandler);
 

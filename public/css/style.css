@@ -147,3 +147,9 @@ width: 250px;
 #replyNumber {
   width: 50px;
 }
+.save {
+  border: 1px solid #bbb;
+  box-shadow: 0.5px 0.5px 5px grey;
+  margin-top: 15px;
+
+}
