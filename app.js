@@ -32,8 +32,8 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
-var Members = require('./routes/Members'),
-var goals = require('./routes/goals'),
+// var Members = require('./routes/Members'),
+// var goals = require('./routes/goals'),
 // parse application/json
 app.use(bodyParser.json());
 
@@ -56,20 +56,20 @@ app.get('/notification', function(req, res) {
     res.render('notification', result);
 
 });
-
-app.get('/goals', goals.show);
-app.get('/goals/add', goals.showAdd);
-app.post('/goals/add', goals.add);
-app.get('/goals/edit/:id', goals.get);
-app.post('/goals/update/:id', goals.update);
-app.get('/goals/delete/:id', goals.delete);
-
-app.get('/notification', notification.show);
-// app.get('/notification/add', notification.showAdd);
-// app.post('/notification/add', notification.add);
-app.get('/notification/edit/:id', notification.get);
-app.post('/notification/update/:id', notification.update);
-// app.get('/notification/delete/:id', notification.delete);
+//
+// app.get('/goals', goals.show);
+// app.get('/goals/add', goals.showAdd);
+// app.post('/goals/add', goals.add);
+// app.get('/goals/edit/:id', goals.get);
+// app.post('/goals/update/:id', goals.update);
+// app.get('/goals/delete/:id', goals.delete);
+//
+// app.get('/notification', notification.show);
+// // app.get('/notification/add', notification.showAdd);
+// // app.post('/notification/add', notification.add);
+// app.get('/notification/edit/:id', notification.get);
+// app.post('/notification/update/:id', notification.update);
+// // app.get('/notification/delete/:id', notification.delete);
 
 app.use(errorHandler);
 
