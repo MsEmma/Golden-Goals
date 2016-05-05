@@ -9,11 +9,11 @@
     <div class="col-md-8">{{> navigation}}</div>
     <div class="col-md-2"></div>
   </div>
+
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
       <div class='feed'>
-
         <div class="goalContainer">
           <div class="steps">
             <span class="goalPic">
@@ -22,12 +22,13 @@
             <span class="stepText">
             Set your goal
             </span>
+
             <form action='/goals' method='POST'>
               <div class="form-group">
-
+                <div class="col-md-12">
                 <input type="text" class="form-control">
-
               </div>
+            </div>
           </div>
 
           <div class="steps">
@@ -39,22 +40,18 @@
             </span>
 
             <div class="form-group">
+              <div class="col-md-12">
               <div class="timeContainer">
                 <input type="number" id="replyNumber" min="0" data-bind="value:replyNumber" />
-
-
                 <label>
                   <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Weeks
                 </label>
-
                 <label>
                   <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Months
                 </label>
-
               </div>
             </div>
-
-
+            </div>
 
             <div class="steps">
               <span class="goalPic">
@@ -63,70 +60,57 @@
               <span class="stepText">
             Set some milestones
             </span>
-
               <div class="form-group">
-                <div class="timeContainer">
-                  <label>To</label>
-                  <input type="text" class="form-control">
-                  <label>In</label>
-                  <input type="number" id="replyNumber" min="0" data-bind="value:replyNumber" />
-
-                  <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Weeks
-                  </label>
-
-                  <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Months
-                  </label>
-
-                </div>
-
-                <div class="form-group">
+                <div class="col-md-12">
                   <div class="timeContainer">
                     <label>To</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-inline">
                     <label>In</label>
                     <input type="number" id="replyNumber" min="0" data-bind="value:replyNumber" />
-
                     <label>
                       <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Weeks
                     </label>
-
                     <label>
                       <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Months
                     </label>
-
                   </div>
-
-
-                  <div class="form-group">
-                    <div class="timeContainer">
-                      <label>To</label>
-                      <input type="text" class="form-control">
-                      <label>In</label>
-                      <input type="number" id="replyNumber" min="0" data-bind="value:replyNumber" />
-
-                      <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Weeks
-                      </label>
-
-                      <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Months
-                      </label>
-                    </div>
-
-
-
-                  </div>
-
-                  </form>
                 </div>
               </div>
 
+              <div class="form-group">
+                <div class="col-md-12">
+                  <div class="timeContainer">
+                    <label>To</label>
+                    <input type="text" class="form-inline">
+                    <label>In</label>
+                    <input type="number" id="replyNumber" min="0" data-bind="value:replyNumber" />
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Weeks
+                    </label>
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Months
+                    </label>
+                  </div>
+                </div>
+              </div>
 
-            </div>
-          </div>
-          <div class="col-md-2"></div>
-        </div>
-
+              <div class="form-group">
+                <div class="col-md-12">
+                  <div class="timeContainer">
+                    <label>To</label>
+                    <input type="text" class="form-inline">
+                    <label>In</label>
+                    <input type="number" id="replyNumber" min="0" data-bind="value:replyNumber" />
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Weeks
+                    </label>
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Months
+                    </label>
+                  </div>
+                </div>
+              </div>
+        <div class="col-md-2"></div>
       </div>
+
+    </div>

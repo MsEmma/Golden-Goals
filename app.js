@@ -61,7 +61,7 @@ app.get('/', home.show);
 
 app.post('/goals', goals.add);
 
-app.get('/notifications/:user_name', notifications.show);
+app.get('/notifications', notifications.show);
 app.post('/notifications/update/:id', notifications.update);
 
 app.use(errorHandler);
