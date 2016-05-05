@@ -121,9 +121,29 @@ padding-top: 40px;
 
 .stepText {
   font-size: 25px;
+  padding-left: 5px;
 }
 
 .text {
   line-height: 3em;
   margin-left: 10px;
+}
+
+.form-control{
+width: 250px;
+
+
+}
+
+.form-group {
+  padding-top: 20px;
+}
+
+.timeContainer {
+display: inline-flex;
+
+}
+
+#replyNumber {
+  width: 50px;
 }
