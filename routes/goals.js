@@ -1,15 +1,3 @@
-exports.showAdd = function(req, res) {
-    req.getConnection(function(err, connection) {
-        if (err) return next(err);
-        connection.query('SELECT * from members', function(err, members) {
-            if (err) return next(err);
-            res.render('add', {
-                members: members,
-            });
-        });
-    });
-};
-
 exports.add = function(req, res, next) {
     req.getConnection(function(err, connection) {
         if (err) return next(err);

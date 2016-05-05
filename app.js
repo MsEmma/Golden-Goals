@@ -59,8 +59,7 @@ app.get('/notification', function(req, res) {
 
 app.get('/', home.show);
 
-app.get('/goals/add', goals.showAdd);
-app.post('/goals/add', goals.add);
+app.post('/goals', goals.add);
 
 app.get('/notification', notification.show);
 app.post('/notification/update/:id', notification.update);
