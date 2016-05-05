@@ -1,13 +1,11 @@
 exports.show = function(req, res, next) {
     req.getConnection(function(err, connection) {
         if (err) return next(err);
-        connection.query(`SELECT milestones.id, milestones.milestone
-          milestones.timeframe
-          FROM milestones`,
+        connection.query('SELECT members.user_name, goals.goal, milestones.milestone, milestones.timeframe FROM milestones INNER JOIN goals ON milestones.goal_id = goals.id INNER JOIN members ON goals.member_id = members.id',
             function(err, results) {
                 if (err) return next(err);
-                res.render('notification', {
-                    milestones: results
+                res.render('notifications', {
+                    notifications: results
                 });
             });
     });
