@@ -49,9 +49,9 @@ app.get('/', function(req, res) {
     res.render('home');
 });
 
-// app.get('/goals', function(req, res) {
-//     res.render('goals');
-// });
+app.get('/goals', function(req, res) {
+    res.render('goals');
+});
 //
 // app.get('/notification', function(req, res) {
 //     res.render('notification', result);
