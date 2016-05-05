@@ -45,12 +45,12 @@ function errorHandler(err, req, res, next) {
     });
 }
 
-app.get('/', function(req, res) {
+app.get('/:user_name', function(req, res) {
     res.render('home');
 });
 
-app.get('/goals', function(req, res) {
-    res.render('goals');
+app.get('/goals/:user_name', function(req, res) {
+    res.render('goals', {user_name : req.params.user_name});
 });
 
 // app.get('/notifications', function(req, res) {
@@ -59,7 +59,7 @@ app.get('/goals', function(req, res) {
 
 app.get('/', home.show);
 
-app.post('/goals', goals.add);
+app.post('/goals/:user_name', goals.add);
 
 app.get('/notifications', notifications.show);
 // app.post('/notifications/update/:id', notifications.update);
