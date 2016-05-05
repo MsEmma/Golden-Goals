@@ -1,51 +1,32 @@
-<div class='container'>
-  {{> logo}}
-  <div class="row">
-    <div class='heading'>
-      <h1 class="teamName">Notifications</h1></div>
-  </div>
-  <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">{{> navigation}}</div>
-    <div class="col-md-2"></div>
-  </div>
+<!-- <div class="col-md-12"> -->
+<div class='note'> <img src="http://i.imgur.com/UELPryU.png" /></div>
+<!-- </div> -->
+{{#milestones}}
 
-  <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-      <div class='feed'>
+  <br>
+  <div class="goalContainer">
+    <h4>{{user_name}}! How have you found your milestone journey to {{milestone}}?</h4>
+    <br>
+    <button type="submit" class="emotions btn btn-default">
+    <span class="emoti">
+      <img src='http://i.imgur.com/UKj8vWB.png' />
+    </span>
+    </button>
+    <button type="submit" class="emotions btn btn-default">
+    <span class="emoti">
+      <img src="http://i.imgur.com/Po6pk4A.png">
+    </span>
+    </button>
+    <button type="submit" class="emotions btn btn-default">
+    <span class="emoti">
+      <img src="http://i.imgur.com/zZkONLo.png">
+    </span>
+    </button>
 
-        <!-- <div class="col-md-12"> -->
-        <div class='note'> <img src="http://i.imgur.com/UELPryU.png" /></div>
-        <!-- </div> -->
-        {{#milestones}}
+{{/milestones}}
 
-          <br>
-          <div class="goalContainer">
-            <h4>{{user_name}}! How has your milestone journey been to {{milestone}}?</h4>
-            <br>
-            <button type="submit" class="emotions btn btn-default">
-            <span class="emoti">
-              <img src='http://i.imgur.com/UKj8vWB.png' />
-            </span>
-            </button>
-            <button type="submit" class="emotions btn btn-default">
-            <span class="emoti">
-              <img src="http://i.imgur.com/Po6pk4A.png">
-            </span>
-            </button>
-            <button type="submit" class="emotions btn btn-default">
-            <span class="emoti">
-              <img src="http://i.imgur.com/zZkONLo.png">
-            </span>
-            </button>
-
-        {{/milestones}}
-
-        <div class="col-md-2"></div>
-        <br>
-        <br>
-        <br>
-        </div>
-      </div>
-    </div>
+<div class="col-md-2"></div>
+<br>
+<br>
+<br>
+</div>

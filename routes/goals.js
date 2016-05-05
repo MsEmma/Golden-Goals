@@ -42,7 +42,7 @@ exports.add = function(req, res, next) {
                 connection.query('insert into milestones (milestone,goal_id,timeframe) VALUES ?', [data1], function(err, results) {
 
                     if (err) return next(err);
-                    res.redirect('/goals?notify=true');
+                    res.redirect('/goals?notify=true&goal_id=' + goal_id);
                 });
             });
         });

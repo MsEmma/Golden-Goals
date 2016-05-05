@@ -61,7 +61,8 @@ app.get('/goals', function(req, res) {
           console.log(notify);
           res.render('goals', {
               goals: results,
-              notify : notify
+              notify : notify,
+              goal_id : req.query.goal_id
           });
       });
   });
@@ -82,7 +83,7 @@ app.get('/', home.show);
 
 app.post('/goals/:user_name', goals.add);
 
-app.get('/notifications', notifications.show);
+app.get('/notifications/:goal_id', notifications.show);
 // app.post('/notifications/update/:id', notifications.update);
 
 app.use(errorHandler);
