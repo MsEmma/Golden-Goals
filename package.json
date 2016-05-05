@@ -1,0 +1,27 @@
+{
+  "name": "golden-goals",
+  "version": "4.4.0",
+  "description": "goal it app",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MsEmma/Golden-Goals.git"
+  },
+  "author": "Golden Goals",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MsEmma/Golden-Goals/issues"
+  },
+  "homepage": "https://github.com/MsEmma/Golden-Goals#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "express-myconnection": "^1.0.4",
+    "handlebars": "^4.0.5",
+    "mysql": "^2.10.2"
+  }
+}

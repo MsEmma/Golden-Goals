@@ -1,0 +1,131 @@
+<div class='container'>
+  {{> logo}}
+  <div class="row">
+    <div class='heading'>
+      <h1 class="header">Goals</h1></div>
+  </div>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">{{> navigation}}</div>
+    <div class="col-md-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class='feed'>
+
+        <div class="goalContainer">
+          <div class="steps">
+            <span class="goalPic">
+              <img src='http://bloximages.newyork1.vip.townnews.com/stltoday.com/content/tncms/assets/v3/editorial/c/e5/ce5b3cba-04d4-11e1-a0c7-001a4bcf6878/4eb06bd0bec28.preview-620.jpg' />
+            </span>
+            <span class="stepText">
+            Set your goal
+            </span>
+            <form action ='/goals' method='POST'>
+              <div class="form-group">
+                <!-- <label for="exampleInputEmail1">Email address</label> -->
+                <input type="text" class="form-control" placeholder="Text input">
+
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+          </div>
+
+          <div class="steps">
+            <span class="goalPic">
+              <img src='http://cliparts101.com/files/507/36ED135A4A460F295D6C821C8A347F62/CLOCK3.png' />
+            </span>
+            <span class="text">
+            Give it some time
+            </span>
+            <form action ='/goals' method='POST'>
+            <div class="form-group">
+              <input type="number" id="replyNumber" min="0" data-bind="value:replyNumber" />
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Weeks
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Months
+              </label>
+            </div>
+            </form>
+
+
+          <div class="steps">
+            <span class="goalPic">
+              <img src='http://i.imgur.com/mEryEVw.png' />
+            </span>
+            <span class="text">
+            Set some milestones
+            </span>
+            <form action ='/goals' method='POST'>
+              <div class="form-group">
+                <label>To</label>
+                <input type="text" class="form-control" placeholder="Text input">
+                <label>In</label>
+                <input type="number" id="replyNumber" min="0" data-bind="value:replyNumber" />
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Weeks
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Months
+                  </label>
+                </div>
+
+                <div class="form-group">
+                  <label>To</label>
+                  <input type="text" class="form-control" placeholder="Text input">
+                  <label>In</label>
+                  <input type="number" id="replyNumber" min="0" data-bind="value:replyNumber" />
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Weeks
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Months
+                    </label>
+                  </div>
+
+                  <div class="form-group">
+                    <label>To</label>
+                    <input type="text" class="form-control" placeholder="Text input">
+                    <label>In</label>
+                    <input type="number" id="replyNumber" min="0" data-bind="value:replyNumber" />
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Weeks
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Months
+                      </label>
+                    </div>
+
+
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+  <!-- <div class="page-header">
+    <h1>Example page header <small>Subtext for header</small></h1>
+  </div> -->
+</div>
