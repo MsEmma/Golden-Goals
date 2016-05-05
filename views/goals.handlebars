@@ -2,112 +2,34 @@
     {{> logo}}
     <div class="row">
         <div class='heading'>
-            <h1 class="header">Goals</h1></div>
+            <h1 class="teamName">CODEX</h1></div>
     </div>
     <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">{{> navigation}}</div>
-        <div class="col-md-2"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-6">{{> navigation}}</div>
+        <div class="col-md-3"></div>
     </div>
-
     <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
+        <div class="col-md-3">{{notify}}</div>
+        <div class="col-md-6">
             <div class='feed'>
+                <ul>
+                    {{#goals}}
 
-              <div class="goalContainer">
-                    <div class="steps">
-                        <span class="goalPic">
-              <img src='http://bloximages.newyork1.vip.townnews.com/stltoday.com/content/tncms/assets/v3/editorial/c/e5/ce5b3cba-04d4-11e1-a0c7-001a4bcf6878/4eb06bd0bec28.preview-620.jpg' />
-            </span>
-                        <span class="stepText">
-            Set your goal
-            </span>
+                        <li class="homeActivity">
+                            <span class="profilePic">
+            <img src='http://papeldeazucar.com/FPD9005BB.jpg'>
+          </span>
 
-                        <form action='/goals/{{user_name}}' method='POST'>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <input type="text" class="form-control" name="goal">
-                                </div>
-                            </div>
-                    </div>
+                            <span class="text">
+          {{user_name}} wants to {{goal}}
+          </span>
+                        </li>
+                    {{/goals}}
 
-
-                    <div class="steps">
-                        <span class="goalPic">
-              <img src='http://i.imgur.com/UdHxX1T.png'>
-
-            </span>
-                        <span class="stepText">
-            Give it some time
-            </span>
-
-                        <div class="form-group">
-                            <div class="col-md-12">
-                                <div class="timeContainer">
-                                    <input type="number" id="replyNumber" min="0" data-bind="value:replyNumber" />
-                                    <label>
-                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Weeks
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Months
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="steps">
-                            <span class="goalPic">
-              <img src='http://i.imgur.com/mEryEVw.png' />
-            </span>
-                            <span class="stepText">
-            Set some milestones
-            </span>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <div class="timeContainer">
-                                        <label>To</label>
-                                        <input type="text" class="form-inline" name ='milestone1'>
-                                        <label>In</label>
-                                        <input type="number" id="replyNumber" min="0" data-bind="value:replyNumber" name = 'timeframe1' >
-                                        <label>Weeks</label>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <div class="timeContainer">
-                                        <label>To</label>
-                                        <input type="text" class="form-inline" name = 'milestone2'>
-                                        <label>In</label>
-                                        <input type="number" id="replyNumber" min="0" data-bind="value:replyNumber" name = 'timeframe2'>
-                                        <label>Weeks</label>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <div class="timeContainer">
-                                        <label>To</label>
-                                        <input type="text" class="form-inline" name = 'milestone3'>
-                                        <label>In</label>
-                                        <input type="number" id="replyNumber" min="0" data-bind="value:replyNumber" name = 'timeframe3'>
-                                        <label>Weeks</label>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2"></div>
-                        </div>
-                    </div>
-                    <button type="submit" class="save btn btn-default">Save</button>
-                </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
+                </ul>
+              </div>
+          </div>
+          <div class="col-md-3"></div>
+      </div>
+  </div>
