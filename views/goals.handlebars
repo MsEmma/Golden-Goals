@@ -2,7 +2,8 @@
     {{> logo}}
     <div class="row">
         <div class='heading'>
-            <h1 class="teamName">Goals</h1></div>
+            <h1 class="teamName">Goals</h1>
+        </div>
     </div>
     <div class="row">
         <div class="col-md-3"></div>
@@ -10,25 +11,23 @@
         <div class="col-md-3"></div>
     </div>
     <div class="row">
-        <div class="col-md-3">
-        </div>
+        <div class="col-md-3"></div>
         <div class="col-md-6">
             <div class='feed'>
-                <a type="button" class="btn btn-primary" href="/goals/Kate">
-                    <div class="texxxxxt">+
-                    </div>
+                <a type="button" class="btn btn-primary" href="/goals/Molly">
+                    <div class="texxxxxt"> + </div>
                 </a>
                 <ul>
                     {{#goals}}
 
                         <li class="homeActivity">
                             <span class="profilePic">
-            <img src='/images/{{user_name}}.jpg'>
-          </span>
+                              <img src='/images/{{user_name}}.jpg'>
+                            </span>
 
                             <span class="text">
-          {{user_name}} wants to {{goal}}
-          </span>
+                              {{user_name}} wants to {{goal}}
+                            </span>
                         </li>
                     {{/goals}}
 
@@ -36,38 +35,23 @@
 
                 <script type="text/javascript">
                     var notify = {{notify}};
-
                     if (notify) {
-
                         setTimeout(function() {
-
-
                             var request = new XMLHttpRequest();
                             request.open('GET', '/notifications/{{goal_id}}', true);
-
                             request.onload = function() {
                                 if (request.status >= 200 && request.status < 400) {
                                     // Success!
                                     var resp = request.responseText;
-
                                     document.querySelector(".feed").innerHTML = resp;
-
-
                                 } else {
-                                    // We reached our target server, but it returned an error
-
+                                   // We reached our target server, but it returned an error
                                 }
                             };
-
                             request.onerror = function() {
                                 // There was a connection error of some sort
                             };
-
                             request.send();
-
-
-
-
                         }, 5000);
                     }
                 </script>

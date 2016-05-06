@@ -8,8 +8,8 @@ exports.show = function(req, res, next) {
             function(err, results) {
                 if (err) return next(err);
                 res.render('notifications', {
-                  milestones :results,
-                  layout : false
+                    milestones: results,
+                    layout: false
                 });
             });
     });

@@ -2,11 +2,11 @@ exports.show = function(req, res, next) {
     req.getConnection(function(err, connection) {
         if (err) return next(err);
         connection.query('SELECT members.id, members.user_name, goals.goal, goals.member_id FROM  members INNER JOIN goals ON goals.member_id = members.id',
-					function(err, results) {
-            if (err) return next(err);
-            res.render('home', {
-                goals: results
+            function(err, results) {
+                if (err) return next(err);
+                res.render('home', {
+                    goals: results
+                });
             });
-        });
     });
 };

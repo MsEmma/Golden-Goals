@@ -7,7 +7,6 @@ exports.add = function(req, res, next) {
         connection.query('select id from members where user_name = ?', user_name, function(err, results) {
             if (err) return next(err);
 
-
             var data = {
                 goal: req.body.goal,
                 start_date: new Date(),
@@ -25,18 +24,15 @@ exports.add = function(req, res, next) {
                         req.body.milestone1,
                         goal_id,
                         Number(req.body.timeframe1)
-                    ],
-                    [
+                    ],[
                         req.body.milestone2,
                         goal_id,
                         Number(req.body.timeframe2)
-                    ],
-                    [
+                    ],[
                         req.body.milestone3,
                         goal_id,
                         Number(req.body.timeframe3)
                     ]
-
                 ];
 
                 connection.query('insert into milestones (milestone,goal_id,timeframe) VALUES ?', [data1], function(err, results) {
@@ -46,6 +42,5 @@ exports.add = function(req, res, next) {
                 });
             });
         });
-
     });
 }
